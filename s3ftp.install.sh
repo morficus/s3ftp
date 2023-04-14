@@ -5,10 +5,16 @@ echo "
 Cheap SFTP on AWS setup script
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-Before proceeding, make sure you have crated an IAM Policy that grants EC2 access to the proper S3 bucket.
-This policy must be attached to your EC2 instnace BEFORE proceeding, othersie s3fs will not be able to mount S3.
+Before proceeding, make sure the following pre-conditions are satisfied:
 
+1. You have crated an IAM Policy that grants EC2 access to the proper S3 bucket.
+This policy must be attached to your EC2 instnace BEFORE proceeding, othersie s3fs will not be able to mount S3.
 You can reerence 'Step 2' in this tutorial for help on that: https://cloudacademy.com/blog/s3-ftp-server/
+
+2. Allow password authentication via SSH
+This is necesary so that you can connect to the SFTP server
+You can reference this for steps on how to do that: https://serverpilot.io/docs/how-to-enable-ssh-password-authentication/
+(techncially this can be done after  this script)
 
 ------------------
 
