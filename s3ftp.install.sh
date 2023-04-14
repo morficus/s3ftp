@@ -105,6 +105,11 @@ sudo chmod a-w /home/$FTP_USERNAME/ftp
 sudo mkdir /home/$FTP_USERNAME/ftp/files
 sudo chown $FTP_USERNAME:$FTP_USERNAME /home/$FTP_USERNAME/ftp/files
 
+# because we are using SFTP and the connection is done for SSH, the default directory is based on the users ssh config/profile
+# so this cmd is to change that directory.
+# ref: https://serverfault.com/questions/499565/change-default-directory-when-i-ssh-to-server
+echo "cd ~/ftp/files" | sudo tee -a /home/$FTP_USERNAME/.bashrc
+echo "cd ~/ftp/files" | sudo tee -a /home/$FTP_USERNAME/.bash_profile
 
 echo "=-=-=-=-=-=-="
 echo "Done creating ftp user"
